@@ -1,0 +1,19 @@
+html,
+body {
+	font-family: Helvetica;
+	font-size: 1em;
+	line-height: 140%;
+	font-style: normal;
+	font-weight: 400;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+#c_title {
+	width: 16vw;
+	line-height: 16vw;
+	text-align: center;
+}
