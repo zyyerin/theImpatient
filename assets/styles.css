@@ -1,87 +1,81 @@
+/*general setup*/
 html, body {
-  background-color: #000;
+  /*type*/
+  font-family: "gastromond", serif;
+  font-size: 1em;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+::selection {
+  background-color: #f00;
+  color: #fff;
 }
 
-#box {
+/*grid*/
+.box {
   color: white;
   display: flex;
-  flex-flow: row wrap;
-}
+  flex-flow: row nowrap;
+  /*justify-content: flex-start;*/
+  width: 100vw;
+  height: 25vh;
+  overflow-x: scroll;
+  overflow-y: visible;
 
-.cards {
-  width: 20vw;
-  height: 20vw;
-  background-color: black;
-  overflow: hidden;
+}
+.card {
+  width: 25vh;
+  height: 25vh;
+  flex-basis: 25vh;
+  flex-shrink: 0;
+}
+.box .info {
+  color: #f00;
+  flex-basis: 50vh;
+  transition: 1s;
+
+}
+.box .card:last-child {
+  background: red;
+}
+/*flip the cards*/
+.card:not(.info){
+  opacity: 0;
   transition: 1.5s;
-}
-
-.display {
-  background-color: white;
 }
 
 /*card flip animation*/
 .cardFlip {
+  transition: 1s;
   transform: perspective(0) rotate3d(0.1, 0, 0, 180deg);
 }
 
 .textBox {
-  margin: 2vw;
+  /*background: #222;*/
+  margin: 4vh;
+  font-size: 9vh;
+  line-height: 6vh;
 }
 
-
-/*doodles*/
-
-.sketches {
-  background-color: none;
+/* card type setting */
+#title{
+  padding-top: 2vh;
 }
-
-.sketches>div {
-  position: absolute;
+.quest{
+  line-height: 18vh;
 }
-
 
 /* form */
-
 input {
-  width: 100%;
+  max-width: 100%;
   border: none;
-  border-bottom: 0.1em solid white;
   background: none;
-}
 
-#display_1 {
-  order: 2;
+  font-family: "gastromond", serif;
+  font-size: 8vh;
+  line-height: 6vh;
 }
-
-#display_2 {
-  order: 4;
-}
-
-#qust_0 {
-  order: 6;
-}
-
-#qust_1a {
-  order: 8;
-}
-
-#qust_1b {
-  order: 10;
-}
-
-#qust_1c {
-  order: 12;
-}
-
-#qust_2a {
-  order: 14;
-}
-
-#qust_2b {
-  order: 16;
-}
-
-#qust_2c {
-  order: 18;
+input:focus {
+    outline-width: 0;
 }

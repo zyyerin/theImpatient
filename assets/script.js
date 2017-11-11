@@ -37,6 +37,15 @@ $(document).ready(function() {
       });
   };
 
+  // randomlize the sketch order
+let sketchNum = 2;
+  for (let i = 0; i < sketchNum; i++) {
+  $('#sketch'+i).css({
+    // 'background-color': 'red',
+    "order": Math.floor(Math.random() * cardNum)
+  });
+}
+
   // select a random card
   $('#generated' + Math.floor(Math.random()) * cardNum).css({
     "background-color": "#aff"

@@ -2,69 +2,114 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>THE IMPATIENT</title>
-    <link rel="stylesheet" type="text/css" href="assets/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/type.css">
+  <meta charset="UTF-8">
+  <title>THE IMPATIENT</title>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet"> -->
+  <script src="https://use.typekit.net/jwh8mlq.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <link rel="stylesheet" type="text/css" href="assets/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles.css">
 </head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="assets/script.js"></script>
+<script language="javascript" type="text/javascript" src="assets/js/script.js"></script>
 
 <body>
-    <div id="box">
-        <!-- sketches -->
-        <div class="cards sketches" id="sketch1"></div>
-        <div class="cards sketches" id="sketch2"></div>
-        <div class="cards sketches" id="sketch3"></div>
+  <div class="box">
+    <!-- title -->
+    <div class="card info">
+      <div class="textBox" id="title">
+        <p>the impatient</p>
+      </div>
+    </div>
+    <div class="card info">
+      <div class="textBox" id="quest0">
+        <p>stories told by terrible listeners</p>
+      </div>
+    </div>
+    <!-- sketches -->
+    <div class="card" id="sketch1"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
 
-        <!-- title -->
-        <div class="cards questions">
-            <div class="textBox" id="c_title">
-                <p>THE IMPATIENT</p>
-            </div>
-        </div>
 
-        <!-- questions -->
-        <div class="cards questions" id="qust_1a">
-            <div class="textBox">
-                <p>Think of a time when you were impatient with someone you care about.
-                </p>
-                <label for="im_name"> Who is that person?
-                    <input type="text" id="im_name" name="im_name">
-                </label>
-            </div>
-        </div>
-        <div class="cards questions" id="qust_1b">
-            <div class="textBox">
-                <label for="im_resn"> Why did you act the way you did?
-                    <input type="text" id="im_resn" name="im_resn"> </label>
-            </div>
-        </div>
-        <div class="cards questions" id="qust_1c">
-            <div class="textBox">
-                <label for="im_say"> What would you like to say to them?
-                    <input type="text" id="im_say" name="im_say">
-                </label>
-            </div>
-        </div>
-
-        <!-- note -->
-        <div class="cards display" id="display_2">
-            <div class="textBox">
-                <p>thank you note</p>
-            </div>
-        </div>
+  <div class="box">
+    <div class="card info">
+      <div class="textBox description">
+        <p>think of a time when you were impatient with someone you care about.</p>
+      </div>
+    </div>
+    <div class="card info" id="qust_1a">
+      <div class="textBox quest">
+          <input onClick="this.select();" type="text" value="Who is that person?">
+      </div>
     </div>
 
-    <!-- scrips -->
-    <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
-    <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
-    <script language="javascript" type="text/javascript" src="libraries/p5.sound.js"></script>
-    <script language="javascript" type="text/javascript" src="assets/sketch.js"></script>
-    <!-- <script language="javascript" type="text/javascript" src="libraries/jquery.hoverIntent.js"></script> -->
-    <!-- <script language="javascript" type="text/javascript" src="assets/script.js"></script> -->
+    <!-- placeholder -->
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+  </div>
+
+  <div class="box">
+    <div class="card info" id="qust_1b">
+      <div class="textBox quest">
+          <input onClick="this.select();" type="text" value="Why did you act the way you did?">
+      </div>
+    </div>
+    <!-- placeholder -->
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+  </div>
+
+  <div class="box">
+    <div class="card info" id="qust_1c">
+      <div class="textBox quest">
+          <input onClick="this.select();" type="text" value="What would you like to say to them?">
+      </div>
+    </div>
+    <div class="card info">
+      <div class="textBox description">
+        share your story
+      </div>
+    </div>
+
+    <!-- placeholder -->
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+  </div>
+
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.sound.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/sketch.js"></script>
 </body>
 
 </html>
