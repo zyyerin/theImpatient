@@ -1,84 +1,87 @@
-html,
-body {
-    background-color: #000;
+html, body {
+  background-color: #000;
 }
 
 #box {
-    color: white;
-    display: flex;
-    flex-flow: row wrap;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .cards {
-    width: 20vw;
-    height: 20vw;
-    overflow: hidden;
-    background-color: black;
-    transition: 1.5s;
-}
-
-/*card flip animation*/
-.cardFlip{
-  transform: perspective(0) rotate3d(0.1, 0, 0, 180deg);
+  width: 20vw;
+  height: 20vw;
+  background-color: black;
+  overflow: hidden;
+  transition: 1.5s;
 }
 
 .display {
-    background-color: white;
-}
-.textBox {
-    margin: 2vw;
+  background-color: white;
 }
 
-/*doodles*/
-.sketches {
-    background-color: none;
+/*card flip animation*/
+.cardFlip {
+  transform: perspective(0) rotate3d(0.1, 0, 0, 180deg);
 }
+
+.textBox {
+  margin: 2vw;
+}
+
+
+/*doodles*/
+
+.sketches {
+  background-color: none;
+}
+
 .sketches>div {
-    position: absolute;
+  position: absolute;
 }
 
 
 /* form */
 
 input {
-    width: 100%;
-    border: none;
-    border-bottom: 0.1em solid white;
-    background: none;
+  width: 100%;
+  border: none;
+  border-bottom: 0.1em solid white;
+  background: none;
 }
 
 #display_1 {
-    order: 2;
+  order: 2;
 }
 
 #display_2 {
-    order: 4;
+  order: 4;
 }
 
 #qust_0 {
-    order: 6;
+  order: 6;
 }
 
 #qust_1a {
-    order: 8;
+  order: 8;
 }
 
 #qust_1b {
-    order: 10;
+  order: 10;
 }
 
 #qust_1c {
-    order: 12;
+  order: 12;
 }
 
 #qust_2a {
-    order: 14;
+  order: 14;
 }
 
 #qust_2b {
-    order: 16;
+  order: 16;
 }
 
 #qust_2c {
-    order: 18;
+  order: 18;
 }

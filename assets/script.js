@@ -2,13 +2,13 @@ var canvas;
 const PATH = 'assets/data/';
 
 let rand = ['#000', '#111', '#222', '#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa', '#bbb', '#ccc', '#ddd', '#eee', '#fff'];
-let cardNum = 22;
+let cardNum = 23;
 
 $(document).ready(function() {
 
   for (let i = 0; i < cardNum; i++) {
     let $div = $("<div>", {
-      id: "generatedCard" + i,
+      id: "generated" + i,
       class: "cards"
     });
     $("#box").append($div);
@@ -24,10 +24,10 @@ $(document).ready(function() {
 
     // main
     let imgUrl = "url(assets/data/" + i + ".jpg)";
-    $('#generatedCard' + i)
-      .addClass("cardFlip")
+    $('#generated' + i)
+      .addClass("stories cardFlip")
       .css({
-          "opacity": 0.5,
+          // "opacity": 0.5,
           "background-color": color,
           "background-image": imgUrl,
           "background-size": "cover",
@@ -38,29 +38,15 @@ $(document).ready(function() {
   };
 
   // select a random card
-  $('#generatedCard' + Math.floor(Math.random()) * cardNum).css({
+  $('#generated' + Math.floor(Math.random()) * cardNum).css({
     "background-color": "#aff"
   });
 
-  // function markIn() {
-  //   $(this)
-  //     .removeClass('cardFlip')
-  //           .animate({
-  //             opacity: 1
-  //           }, 200);
-  // }
-  //
-  // function markOut() {
-  //   $(this).addClass('cardFlip')
-  //           .animate({
-  //             opacity: 0.5
-  //           }, 200);
-  // }
-  //
   // $(".cards").hoverIntent(markIn, markOut);
 
-  $( ".questions" ).click(function() {
-    $('.cards').toggleClass('cardFlip');
-    // console.log( "Handler for .click() called." );
+  let chooseCard;
+  $( "html" ).keypress(function() {
+    chooseCard = '#generated' + Math.floor(Math.random() * cardNum);
+    $(chooseCard).toggleClass('cardFlip');
   });
 });
