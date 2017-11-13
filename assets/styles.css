@@ -21,7 +21,6 @@ html, body {
   width: 100vw;
   height: 25vh;
   overflow-x: scroll;
-  overflow-y: visible;
 
 }
 .card {
@@ -29,6 +28,8 @@ html, body {
   height: 25vh;
   flex-basis: 25vh;
   flex-shrink: 0;
+  overflow-y: scroll;
+
 }
 
 .box .info {
