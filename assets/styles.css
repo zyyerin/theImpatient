@@ -30,8 +30,9 @@ html, body {
   flex-basis: 25vh;
   flex-shrink: 0;
 }
+
 .box .info {
-  color: #f00;
+  color: #000;
   flex-basis: 50vh;
   transition: 1s;
 
@@ -72,6 +73,7 @@ input {
   border: none;
   background: none;
 
+  color: #f00;
   font-family: "gastromond", serif;
   font-size: 8vh;
   line-height: 6vh;

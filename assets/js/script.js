@@ -1,6 +1,5 @@
 const BOX_NUM = 4;
 const CARD_NUM = 10;
-let quest0 = false;
 
 $(document).ready(function() {
 
@@ -31,21 +30,17 @@ let boxIdx, cardIdx;
     $(choosenCard)
       .css({
         'opacity': '1'
-        // 'transform': 'perspective(0) rotate3d(0.1, 0, 0, 0)'
       })
       .toggleClass('cardFlip');
   });
 
-// STAGE I
-// show the title and intro
- $('.box:first-child .info:first-child')
-   .css({
-     'opacity': 1,
-     'color': '#000'
-   });
-$('#quest0').click(function(){
-  quest0 = true;
-  alert("clicked");
-});
+  $('input').click(function(){
+    let typeScale = 1;
+    $(this).keypress(function(){
+      typeScale += 0.1;
+      $(this).css('font-size', typeScale);
+      console.log($(this).parent('div').height());
+    })
+  });
 
 });
