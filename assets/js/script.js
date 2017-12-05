@@ -1,46 +1,5 @@
-const BOX_NUM = 4;
-const CARD_NUM = 10;
-
-$(document).ready(function() {
-
-  // randomlize the initial layout
-  for(let j=1; j<=BOX_NUM; j++){
-    for(let i=1; i<=CARD_NUM; i++){
-      $('.box:nth-child(' + j + ') .card:nth-child('+i+')').css('order', Math.floor(Math.random()*CARD_NUM));
-    }
-  }
-
-
-  $('.card:not(.info)').each(function(idx) {
-    $(this).css({
-        "background-image": "url(assets/img/" + idx + ".jpg)",
-        "background-size": "cover",
-        "background-position": "center",
-        "background-repeat": "no-repeat"
-    });
-  });
-
-// reveal cards as typing
-let boxIdx, cardIdx;
-  $( "html" ).keypress(function() {
-    boxIdx = Math.floor(Math.random() * BOX_NUM);
-    cardIdx = Math.floor(Math.random() * CARD_NUM);
-    let choosenCard = '.box:nth-child('+boxIdx+') .card:not(.info):nth-child('+cardIdx+')';
-
-    $(choosenCard)
-      .css({
-        'opacity': '1'
-      })
-      .toggleClass('cardFlip');
-  });
-
-  $('input').click(function(){
-    let typeScale = 1;
-    $(this).keypress(function(){
-      typeScale += 0.1;
-      $(this).css('font-size', typeScale);
-      console.log($(this).parent('div').height());
-    })
-  });
-
-});
+const BOX_NUM=4;const CARD_NUM=30;let count=[];let w=window.innerWidth;let h=window.innerHeight;$(document).ready(function(){$('#loader').delay(3500).fadeOut(1000);init();stage(1);stage(2);stage(3);$(".imgHolder").click(function(){if(!$(this).hasClass('init')&&!$(this).hasClass('cardFlip0')){if(!$(this).hasClass("bluing")){$(this).addClass("bluing")}else{$(this).removeClass("bluing imgHolder").css({"background-color":"none","background-image":"url(assets/drops/"+shuffle(25)+".png)","background-size":"initial","cursor":"url(assets/cursor/close_b.png), auto"}).off()}}});$("#intro").click(function(){$(this).toggleClass("textBox").toggleClass("shared")})});function init(){for(let j=1;j<=BOX_NUM;j++){for(let i=1;i<=CARD_NUM;i++){$('.box:nth-child('+j+') .card:nth-child('+i+')').css('order',shuffle(CARD_NUM))}}
+$('.imgHolder').each(function(idx){$(this).css({"background-image":"url(assets/cards/"+idx+".png)","background-size":"cover","background-position":"center","background-repeat":"no-repeat","background-color":"white"})})}
+function flipCards(){let boxIdx=shuffle(BOX_NUM);let cardIdx=shuffle(CARD_NUM);let choosenCard='.box:nth-child('+boxIdx+') .imgHolder:nth-child('+cardIdx+')';$(choosenCard).removeClass('init').css('transition',shuffle(4)+'s').toggleClass('cardFlip0')}
+function stage(stageIdx){count[stageIdx]=0;$('#input'+stageIdx).focusin(function(){let typeScale=0;$(this).removeClass('current')}).focus(function(){$(this).keypress(function(){let sound=document.getElementById("chime"+shuffle(10));sound.volume=0.3;sound.play();count[stageIdx]=$(this).val().length;typeScale=count[stageIdx]*0.03;$(this).css({'font-size':typeScale+'em','color':'red'});flipCards()})}).focusout(function(){if(count[stageIdx]!==0){stageIdx++};if(stageIdx<4){$('#input'+stageIdx).addClass('current')}})}
+function shuffle(n){return Math.floor(Math.random()*n)+1}
